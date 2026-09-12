@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Appliance Energy Consumption</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo-link">
+        <img src="assets/img/logo (1).png" alt="Power Logo" class="site-logo">
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-item active">Home</a></li>
+        <li><a href="televisions.html" class="nav-item">Televisions</a></li>
+        <li><a href="about.html" class="nav-item">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="page-container">
+    
+    <!-- Hero Introduction -->
+    <section class="hero-card">
+      <h1>Appliance Energy Consumption in Australia</h1>
+      <p>Understanding household electricity demand and optimizing appliance efficiency across Australian residential homes.</p>
+    </section>
+
+    <!-- Information Content Block -->
+    <section class="content-box">
+      <h2>Australian Market Overview</h2>
+      <p>Household appliances account for up to 30% of energy usage in Australian homes. With rising peak tariffs across the National Electricity Market (NEM), monitoring running wattage and utilizing energy-efficient appliances (evaluated via the Australian Energy Rating label) helps significantly mitigate ongoing utility expenses and household carbon footprint.</p>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="content-box faq-container">
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-card">
+        <button type="button" class="faq-toggle">What is a Kilowatt-hour (kWh)?</button>
+        <div class="faq-content">
+          <p>A kilowatt-hour (kWh) represents the amount of energy consumed by a 1,000-watt appliance operating continuously for one hour. Australian electricity retailers bill residential usage per kWh.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <button type="button" class="faq-toggle">How does the Australian Star Rating system work?</button>
+        <div class="faq-content">
+          <p>The Energy Rating label rates appliances on a scale from 1 to 10 stars. More stars indicate higher electrical efficiency compared to models of similar size and capacity.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <button type="button" class="faq-toggle">What is vampire power / standby draw?</button>
+        <div class="faq-content">
+          <p>Standby power is electricity consumed by electronics when turned off or in standby mode. It can contribute 3% to 10% of standard household power consumption.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Appliance Energy Calculator Extension -->
+    <section class="content-box calculator-wrapper">
+      <h2>Interactive Appliance Energy Calculator</h2>
+      <p class="section-lead">Estimate electrical load and operating expenditure based on daily appliance runtime.</p>
+
+      <form id="calculatorForm" class="calc-grid" novalidate>
+        <div class="input-block">
+          <label for="applianceSelect">Appliance Model Preset:</label>
+          <select id="applianceSelect">
+            <option value="">-- Custom Wattage --</option>
+            <option value="65">55" LED TV (65 W)</option>
+            <option value="160">65" OLED TV (160 W)</option>
+            <option value="150">Domestic Refrigerator (150 W)</option>
+            <option value="1200">Standard Microwave (1200 W)</option>
+            <option value="2200">Split-System AC (2200 W)</option>
+          </select>
+        </div>
+
+        <div class="input-block">
+          <label for="powerInput">Power Consumption (Watts):</label>
+          <input type="number" id="powerInput" placeholder="e.g. 100" min="1" step="any">
+        </div>
+
+        <div class="input-block">
+          <label for="hoursInput">Average Usage (Hours / Day):</label>
+          <input type="number" id="hoursInput" placeholder="e.g. 4.5" min="0.1" max="24" step="any">
+        </div>
+
+        <div class="input-block">
+          <label for="tariffInput">Electricity Price (Cents / kWh):</label>
+          <input type="number" id="tariffInput" placeholder="e.g. 32" min="0" step="any">
+        </div>
+
+        <button type="submit" class="calc-btn">Compute Energy &amp; Cost</button>
+      </form>
+
+      <!-- Feedback / Error Area -->
+      <div id="validationFeedback" class="status-msg hidden" aria-live="polite"></div>
+
+      <!-- Dynamic Output Panel -->
+      <div id="calculatorOutputs" class="output-panel hidden">
+        <h3>Calculated Energy Consumption</h3>
+        <div class="output-grid">
+          <div class="metric-card">
+            <span class="metric-label">Daily Consumption</span>
+            <span class="metric-val" id="outDailyKwh">0.00 kWh</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Monthly Consumption</span>
+            <span class="metric-val" id="outMonthlyKwh">0.00 kWh</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Annual Consumption</span>
+            <span class="metric-val" id="outYearlyKwh">0.00 kWh</span>
+          </div>
+          <div class="metric-card highlight-metric">
+            <span class="metric-label">Estimated Annual Cost</span>
+            <span class="metric-val" id="outYearlyCost">$0.00</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="currentYear"></span> Syed Hakim. All rights reserved.</p>
+    <p class="ai-notice">Generative AI Acknowledgement: Developed with assistance from Gemini for markup architecture, logic, and styling validation.</p>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
