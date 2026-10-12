@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 4.4 | Data Ingestion &amp; Statistics</title>
+  <!-- Load main styling from assets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header>
+  <nav class="navbar">
+    <a href="../index.html" class="logo-link">
+      <img src="../assets/img/logo (1).png" alt="Power Logo" class="site-logo">
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="../index.html" class="nav-item">Home</a></li>
+      <li><a href="../televisions.html" class="nav-item">Televisions</a></li>
+      <li><a href="../about.html" class="nav-item">About Us</a></li>
+
+      <li class="dropdown">
+        <button class="dropbtn">Exercises ▾</button>
+        <div class="dropdown-content">
+          
+          <a href="exercise 4.3.html" class="active">Exercise 4.3</a>
+          <a href="../Exercise 4.4/exercise 4.4.html">Exercise 4.4</a>
+          <a href="../Exercise 4.5/exercise 4.5.html">Exercise 4.5</a>
+          <a href="../Exercise 4.6/exercise 4.6.html">Exercise 4.6</a>
+          
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+  <!-- Main Content -->
+  <main class="page-container">
+    <section class="hero-card">
+      <h1>Exercise 4.4: Loading &amp; Processing CSV Data</h1>
+      <p>Demonstrating asynchronous CSV loading with d3.csv(), numeric casting, sorting, and console statistical summaries.</p>
+    </section>
+
+    <!-- Results Card -->
+    <section class="content-box">
+      <h2>Console Output Verification</h2>
+      <p>Exercise 4.4 processes data in the background. Open your browser developer console (press <strong>F12</strong> &rarr; <strong>Console</strong>) to inspect the loaded data array, min/max statistics, and descending sort order.</p>
+      <div id="data-summary" style="margin-top: 15px; font-family: monospace; background: #f8fafc; padding: 15px; border-radius: 6px; border: 1px solid #cbd5e1;"></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="currentYear"></span> Syed Hakim. All rights reserved.</p>
+  </footer>
+
+  <!-- 1. Load D3 library from CDN -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <!-- 2. Load Exercise 4.4 JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
