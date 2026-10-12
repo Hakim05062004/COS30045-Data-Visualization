@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 5.3 | TV Size Proportion Donut Chart</title>
+  
+  <!-- Step out one level to assets in Exercise 5 -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  
+  <!-- D3.js Library -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header>
+    <nav class="navbar">
+      <a href="../index.html" class="logo-link">
+        <img src="../assets/img/logo (1).png" alt="Power Logo" class="site-logo">
+      </a>
+      <ul class="nav-menu">
+        <li><a href="../index.html" class="nav-item">Home</a></li>
+        <li><a href="../televisions.html" class="nav-item">Televisions</a></li>
+        <li><a href="../about.html" class="nav-item">About Us</a></li>
+        <li><a href="../Exercise 5.1/exercise 5.1.html" class="nav-item">Exercise 5.1</a></li>
+        <li><a href="../Exercise 5.2/exercise 5.2.html" class="nav-item">Exercise 5.2</a></li>
+        <li><a href="exercise 5.3.html" class="nav-item active">Exercise 5.3</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="page-container">
+    
+    <section class="hero-card">
+      <h1>Exercise 5.3: Donut Chart</h1>
+      <p>Proportion of small, medium, and large television models.</p>
+    </section>
+
+    <section class="content-box">
+      <h2>Proportion of TV Screen Sizes</h2>
+      <!-- D3 Container for Donut Chart -->
+      <div id="donut-chart" class="responsive-svg-container"></div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="currentYear"></span> Syed Hakim. All rights reserved.</p>
+    <p class="ai-notice">Generative AI Acknowledgement: Developed with assistance from ChatGPT for markup architecture, logic, and styling validation.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/script.js"></script>
+  <!-- Direct reference to donut-chart.js located inside Exercise 5.3 -->
+  <script src="donut-chart.js"></script>
+</body>
+</html>

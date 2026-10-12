@@ -1,0 +1,370 @@
+/* ==========================================================================
+   CSS Reset & Variables (Matched to Power Logo Theme)
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --logo-bolt: #f59e0b;         /* Primary lightning amber */
+  --logo-bolt-hover: #d97706;   /* Darker amber for interactions */
+  --logo-badge: #fde68a;        /* Soft circular background yellow */
+  --brand-dark: #231f20;        /* Logo border dark charcoal */
+  --bg-main: #f9fafb;           /* Clean background gray */
+  --card-bg: #ffffff;           /* Pure white card backgrounds */
+  --border-subtle: #e5e7eb;     /* Section border outline */
+  --text-muted: #4b5563;        /* Secondary paragraph text */
+  --error-bg: #fee2e2;          /* Validation error background */
+  --error-text: #b91c1c;        /* Validation error text */
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: var(--brand-dark);
+  background-color: var(--bg-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-container {
+  width: 92%;
+  max-width: 980px;
+  margin: 2rem auto;
+  flex: 1 0 auto;
+}
+
+/* ==========================================================================
+   Top Navigation Bar
+   ========================================================================== */
+header {
+  background-color: #ffffff;
+  border-bottom: 2px solid var(--border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.navbar {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.site-logo {
+  height: 48px;
+  width: auto;
+  transition: transform 0.2s ease-in-out;
+}
+
+.logo-link:hover .site-logo {
+  transform: scale(1.08);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: var(--brand-dark);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+/* Hover Effect */
+.nav-item:hover {
+  background-color: var(--logo-badge);
+  color: var(--brand-dark);
+}
+
+/* Active Indicator */
+.nav-item.active {
+  background-color: var(--logo-bolt);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Content Blocks & Cards
+   ========================================================================== */
+.hero-card {
+  background: linear-gradient(135deg, var(--logo-badge) 0%, #ffffff 100%);
+  border: 1px solid #fcd34d;
+  padding: 2.25rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.75rem;
+  text-align: center;
+}
+
+.hero-card h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--brand-dark);
+}
+
+.hero-card p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.content-box {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 1.75rem;
+  margin-bottom: 1.75rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.content-box h2 {
+  margin-bottom: 1rem;
+  font-size: 1.35rem;
+  border-left: 4px solid var(--logo-bolt);
+  padding-left: 0.6rem;
+}
+
+.section-lead {
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+/* ==========================================================================
+   Accordion FAQ Section
+   ========================================================================== */
+.faq-card {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.faq-card:last-child {
+  border-bottom: none;
+}
+
+.faq-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 1rem 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--brand-dark);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.faq-toggle:hover {
+  color: var(--logo-bolt-hover);
+}
+
+.faq-toggle::after {
+  content: "+";
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--logo-bolt);
+}
+
+.faq-card.open .faq-toggle::after {
+  content: "−";
+}
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease-out;
+}
+
+.faq-content p {
+  padding-bottom: 1rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   Calculator Form & Dynamic Output
+   ========================================================================== */
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .calc-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.input-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-block label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.input-block input,
+.input-block select {
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.input-block input:focus,
+.input-block select:focus {
+  outline: none;
+  border-color: var(--logo-bolt);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25);
+}
+
+.calc-btn {
+  grid-column: 1 / -1;
+  background-color: var(--logo-bolt);
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.calc-btn:hover {
+  background-color: var(--logo-bolt-hover);
+}
+
+.status-msg {
+  margin-top: 1.25rem;
+  padding: 0.85rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.status-msg.error {
+  background-color: var(--error-bg);
+  color: var(--error-text);
+  border: 1px solid #fca5a5;
+  display: block;
+}
+
+.output-panel {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--border-subtle);
+}
+
+.output-panel.hidden,
+.status-msg.hidden {
+  display: none;
+}
+
+.output-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.metric-card {
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.metric-card.highlight-metric {
+  background-color: #fffbeb;
+  border-color: #fcd34d;
+}
+
+.metric-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.metric-val {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--brand-dark);
+}
+
+.highlight-metric .metric-val {
+  color: #b45309;
+}
+
+/* ==========================================================================
+   Tables & Guidelines (Televisions / About)
+   ========================================================================== */
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.report-table th,
+.report-table td {
+  padding: 0.85rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.report-table th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+}
+
+.guideline-list {
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.guideline-list li {
+  margin-bottom: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+  background-color: #ffffff;
+  border-top: 1px solid var(--border-subtle);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.ai-notice {
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
+  font-style: italic;
+}
