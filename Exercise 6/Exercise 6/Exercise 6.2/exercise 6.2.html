@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 6.2 | TV Energy Consumption Filters</title>
+  
+  <!-- Shared assets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/visualisation.css">
+  
+  <!-- D3.js Library -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header>
+    <nav class="navbar">
+      <a href="../index.html" class="logo-link">
+        <img src="../assets/img/logo (1).png" alt="Power Logo" class="site-logo">
+      </a>
+      <ul class="nav-menu">
+  <li><a href="../index.html" class="nav-item">Home</a></li>
+  <li><a href="../televisions.html" class="nav-item">Televisions</a></li>
+  <li><a href="../about.html" class="nav-item">About Us</a></li>
+  <li><a href="../Exercise 6.1/exercise 6.1.html" class="nav-item">Exercise 6.1</a></li>
+  <li><a href="exercise 6.2.html" class="nav-item active">Exercise 6.2</a></li>
+  <li><a href="../Exercise 6.3/exercise 6.3.html" class="nav-item">Exercise 6.3</a></li>
+  <li><a href="../Exercise 6.4/exercise 6.4.html" class="nav-item">Exercise 6.4</a></li>
+</ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="page-container">
+    
+    <section class="hero-card">
+      <h1>Exercise 6.2: Interactive Filters</h1>
+      <p>Filter energy consumption by Screen Technology (LED, LCD, OLED) and Screen Sizes.</p>
+    </section>
+
+    <section class="content-box">
+      <h2>Energy Consumption for different TV screen types and sizes</h2>
+      <p>Most TVs on sale in Australia are LED and they vary considerably in energy consumption.</p>
+      
+      <!-- Screen Tech Filter Buttons -->
+      <div id="filters_screen" class="filters-group"></div>
+
+      <!-- D3 Histogram SVG -->
+      <div id="histogram" class="responsive-svg-container"></div>
+
+      <!-- Screen Size Extension Filter Buttons -->
+      <div id="filters_size" class="filters-group"></div>
+    </section>
+
+    <section class="content-box">
+      <h3>Data Source</h3>
+      <p>
+        <a href="https://data.gov.au/data/dataset/energy-rating-for-household-appliances" target="_blank" rel="noopener">
+          Energy Rating Data for household appliances – Televisions
+        </a><br>
+        Downloaded Jan 2026
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="currentYear"></span> Syed Hakim. All rights reserved.</p>
+    <p class="ai-notice">Generative AI Acknowledgement: Developed with assistance from ChatGPT for markup architecture, logic, and styling validation.</p>
+  </footer>
+
+  <!-- Scripts in dependency order -->
+  <script src="../assets/js/script.js"></script>
+  <script src="js/shared-constants.js"></script>
+  <script src="js/interactions.js"></script>
+  <script src="js/histogram.js"></script>
+  <script src="js/load-data.js"></script>
+</body>
+</html>
