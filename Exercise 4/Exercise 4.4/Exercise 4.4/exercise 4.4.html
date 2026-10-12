@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 4.5 | Data Binding to Rectangles</title>
+  <!-- Main site styling -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header>
+  <nav class="navbar">
+    <a href="../index.html" class="logo-link">
+      <img src="../assets/img/logo (1).png" alt="Power Logo" class="site-logo">
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="../index.html" class="nav-item">Home</a></li>
+      <li><a href="../televisions.html" class="nav-item">Televisions</a></li>
+      <li><a href="../about.html" class="nav-item">About Us</a></li>
+
+      <li class="dropdown">
+        <button class="dropbtn">Exercises ▾</button>
+        <div class="dropdown-content">
+          
+          <a href="../Exercise 4.3/exercise 4.3.html">Exercise 4.3</a>
+          <a href="exercise 4.4.html" class="active">Exercise 4.4</a>
+          <a href="../Exercise 4.5/exercise 4.5.html">Exercise 4.5</a>
+          <a href="../Exercise 4.6/exercise 4.6.html">Exercise 4.6</a>
+          
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+  <!-- Main Content -->
+  <main class="page-container">
+    <section class="hero-card">
+      <h1>Exercise 4.5: Data Binding &amp; Drawing Rectangles</h1>
+      <p>Binding CSV records to SVG rectangles using raw pixel widths.</p>
+    </section>
+
+    <!-- Visualisation Card -->
+    <section class="content-box">
+      <h2>Raw Data Rectangles Output</h2>
+      <p>Each bar represents a TV brand count rendered as an unscaled horizontal rectangle:</p>
+      
+      <!-- D3 renders the SVG chart inside here -->
+      <div class="responsive-svg-container" style="margin-top: 20px; overflow-x: auto;"></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="currentYear"></span> Syed Hakim. All rights reserved.</p>
+  </footer>
+
+  <!-- 1. D3 CDN Library -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <!-- 2. Exercise 4.5 JS Script -->
+  <script src="js/main.js"></script>
+</body>
+</html>
